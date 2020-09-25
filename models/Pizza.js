@@ -35,7 +35,7 @@ const PizzaSchema = new Schema(
   }
 );
 
-//get total count of comments and replies on restrieval
+//get the total count of comments and replies on restrieval
 PizzaSchema.virtual("commentCount").get(function () {
   return this.comments.length;
 });

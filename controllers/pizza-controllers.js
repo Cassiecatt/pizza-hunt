@@ -6,9 +6,9 @@ const pizzaController = {
     Pizza.find({})
       .populate({
         path: "comments", // pulls in comment data
-        select: "-__v", // does not include he --v field when querying
+        select: "-__v", // does not include the --v field when querying
       })
-      .select("-__v") // does not include he --v field when querying
+      .select("-__v") // does not include the --v field when querying
       .sort({ _id: -1 }) // sorts by newest pizza created
       .then((dbPizzaData) => res.json(dbPizzaData))
       .catch((err) => {
