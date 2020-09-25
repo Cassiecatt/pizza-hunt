@@ -22,9 +22,9 @@ const pizzaController = {
     Pizza.findOne({ _id: params.id })
       .populate({
         path: "comments", // pulls in comment data
-        select: "-__v", // does not include he --v field when querying
+        select: "-__v", // does not include the --v field when querying
       })
-      .select("-__v") // does not include he --v field when querying
+      .select("-__v") // does not include the --v field when querying
       .then((dbPizzaData) => {
         // If no pizza is found, send 404
         if (!dbPizzaData) {
